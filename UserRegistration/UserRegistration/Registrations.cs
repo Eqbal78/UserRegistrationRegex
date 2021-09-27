@@ -10,8 +10,27 @@ namespace UserRegistration
         /// <summary>
         /// Check the string is following pattern or not
         /// </summary>
-        /// <param name="name"></param>
-        public void Check(string name)
+        /// <param name="name">first name</param>
+        public void FirstName(string name)
+        {
+            // Regex pattern
+            string pattern = "^[A-Z]{1}[a-z]{3}$";
+            Regex regex = new Regex(pattern);
+            if (regex.IsMatch(name))
+            {
+                Console.WriteLine("Name {0} is Valid ", name);
+            }
+            else
+            {
+                Console.WriteLine("Name {0} is Invalid", name);
+            }
+        }
+
+        /// <summary>
+        /// Last name is in following pattern
+        /// </summary>
+        /// <param name="name">last name</param>
+        public void LastName(string name)
         {
             // Regex pattern
             string pattern = "^[A-Z]{1}[a-z]{3}$";

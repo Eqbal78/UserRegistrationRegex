@@ -11,7 +11,11 @@ namespace UserRegistration
             Registrations user = new Registrations();
             Console.WriteLine("Enter your first name : ");
             string firstName = Console.ReadLine();
-            user.Check(firstName);
+            user.FirstName(firstName);
+
+            Console.WriteLine("\nEnter your last name : ");
+            string lastName = Console.ReadLine();
+            user.LastName(lastName);
         }
     }
 }
