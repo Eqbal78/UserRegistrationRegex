@@ -14,7 +14,7 @@ namespace UserRegistration
         public void Check(string name)
         {
             // Regex pattern
-            string pattern = "^[A-Z]{1}[a-z]{4}$";
+            string pattern = "^[A-Z]{1}[a-z]{3}$";
             Regex regex = new Regex(pattern);
             if (regex.IsMatch(name))
             {
