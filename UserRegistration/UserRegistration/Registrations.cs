@@ -64,5 +64,20 @@ namespace UserRegistration
                 Console.WriteLine("Email :{0} is Invalid", mail);
             }
         }
+
+        public void PhoneNumber(string num)
+        {
+            string pattern = @"^[1-9]{2}"+" "+"[1-9]{1}[0-9]{9}$";
+            Regex regex = new Regex(pattern);
+            if (regex.IsMatch(num))
+            {
+                Console.WriteLine("Mobile Number {0} is valid", num);
+            }
+            else
+            {
+                Console.WriteLine("Mobile Number {0} is invalid", num);
+            }
+        }
+
     }
 }
