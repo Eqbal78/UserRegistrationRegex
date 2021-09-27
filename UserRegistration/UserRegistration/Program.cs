@@ -10,12 +10,12 @@ namespace UserRegistration
             //object create
             Registrations user = new Registrations();
             //First Name
-            Console.WriteLine("Enter your first name : ");
+            Console.WriteLine("Enter your First name : ");
             string firstName = Console.ReadLine();
             user.FirstName(firstName);
 
             //Last Name
-            Console.WriteLine("\nEnter your last name : ");
+            Console.WriteLine("\nEnter your Last name : ");
             string lastName = Console.ReadLine();
             user.LastName(lastName);
 
