@@ -28,6 +28,12 @@ namespace UserRegistration
             Console.WriteLine("\nEnter your Mobile Number:");
             string num = Console.ReadLine();
             user.PhoneNumber(num);
+
+            //Password
+            Console.WriteLine("\nEnter your Password:");
+            string psw = Console.ReadLine();
+            user.Password(psw);
+
         }
     }
 }

@@ -65,6 +65,10 @@ namespace UserRegistration
             }
         }
 
+        /// <summary>
+        /// Phone Number is in following pattern
+        /// </summary>
+        /// <param name="num"></param>
         public void PhoneNumber(string num)
         {
             string pattern = @"^[1-9]{2}"+" "+"[1-9]{1}[0-9]{9}$";
@@ -76,6 +80,24 @@ namespace UserRegistration
             else
             {
                 Console.WriteLine("Mobile Number {0} is invalid", num);
+            }
+        }
+
+        /// <summary>
+        /// Password is in following pattern
+        /// </summary>
+        /// <param name="psw"></param>
+        public void Password(string psw)
+        {
+            string pattern = @"^[a-zA-Z0-9]{8}$";
+            Regex regex = new Regex(pattern);
+            if (regex.IsMatch(psw))
+            {
+                Console.WriteLine("Password {0} is valid", psw);
+            }
+            else
+            {
+                Console.WriteLine("Password {0} is invalid", psw);
             }
         }
 
