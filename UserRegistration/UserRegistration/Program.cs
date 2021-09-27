@@ -34,6 +34,26 @@ namespace UserRegistration
             string psw = Console.ReadLine();
             user.Password(psw);
 
+            //Sample Email
+            user.Email("abc@yahoo.com");
+            user.Email("abc-100@yahoo.com");
+            user.Email("abc@gmail.com.com");
+            user.Email("abc.100@yahoo.com");
+            user.Email("abc111@abc.com");
+            user.Email("abc-100@abc.net");
+            user.Email("abc.100@abc.com.au");
+            user.Email("abc@1.com");
+            user.Email("abc+100@gmail.com");
+            user.Email("abc");
+            user.Email("abc@.com.my");
+            user.Email("abc123@gmail.a");
+            user.Email("abc123@.com");
+            user.Email(".abc@abc.com");
+            user.Email("abc()*@gmail.com");
+            user.Email("abc@%*.com");
+            user.Email("abc..2002@gmail.com");
+            user.Email("abc.@gmail.com");
+            user.Email("abc@abc@gmail.com");
         }
     }
 }
