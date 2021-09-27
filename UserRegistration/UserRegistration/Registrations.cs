@@ -89,7 +89,7 @@ namespace UserRegistration
         /// <param name="psw"></param>
         public void Password(string psw)
         {
-            string pattern = @"^(?=.*[A-Z])[a-zA-Z0-9]{8}$";
+            string pattern = @"^(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9]{8}$";
             Regex regex = new Regex(pattern);
             if (regex.IsMatch(psw))
             {
