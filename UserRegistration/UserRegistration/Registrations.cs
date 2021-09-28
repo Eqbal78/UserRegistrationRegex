@@ -11,10 +11,10 @@ namespace UserRegistration
         /// Check the string is following pattern or not
         /// </summary>
         /// <param name="name">first name</param>
-        public void FirstName(string name)
+        public bool FirstName(string name)
         {
             // Regex pattern
-            string pattern = "^[A-Z]{1}[a-z]{3}$";
+            string pattern = "^[A-Z]{1}[a-z]{3,}$";
             Regex regex = new Regex(pattern);
             if (regex.IsMatch(name))
             {
@@ -24,16 +24,17 @@ namespace UserRegistration
             {
                 Console.WriteLine("Name {0} is Invalid", name);
             }
+            return regex.IsMatch(name);
         }
 
         /// <summary>
         /// Last name is in following pattern
         /// </summary>
         /// <param name="name">last name</param>
-        public void LastName(string name)
+        public bool LastName(string name)
         {
             // Regex pattern
-            string pattern = "^[A-Z]{1}[a-z]{3}$";
+            string pattern = "^[A-Z]{1}[a-z]{3,}$";
             Regex regex = new Regex(pattern);
             if (regex.IsMatch(name))
             {
@@ -43,13 +44,14 @@ namespace UserRegistration
             {
                 Console.WriteLine("Name {0} is Invalid", name);
             }
+            return regex.IsMatch(name);
         }
 
         /// <summary>
         /// Email is in following pattern
         /// </summary>
         /// <param name="mail"></param>
-        public void Email(string mail)
+        public bool Email(string mail)
         {
             //regex pattern is created to check validity
             string pattern = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
@@ -63,13 +65,14 @@ namespace UserRegistration
             {
                 Console.WriteLine("Email :{0} is Invalid", mail);
             }
+            return regex.IsMatch(mail);
         }
 
         /// <summary>
         /// Phone Number is in following pattern
         /// </summary>
         /// <param name="num"></param>
-        public void PhoneNumber(string num)
+        public bool PhoneNumber(string num)
         {
             string pattern = @"^[1-9]{2}"+" "+"[1-9]{1}[0-9]{9}$";
             Regex regex = new Regex(pattern);
@@ -81,15 +84,16 @@ namespace UserRegistration
             {
                 Console.WriteLine("Mobile Number {0} is invalid", num);
             }
+            return regex.IsMatch(num);
         }
 
         /// <summary>
         /// Password is in following pattern
         /// </summary>
         /// <param name="psw"></param>
-        public void Password(string psw)
+        public bool Password(string psw)
         {
-            string pattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d@$!%*?&]{8}$";
+            string pattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d@$!%*?&]{8,}$";
             Regex regex = new Regex(pattern);
             if (regex.IsMatch(psw))
             {
@@ -99,6 +103,7 @@ namespace UserRegistration
             {
                 Console.WriteLine("Password {0} is invalid", psw);
             }
+            return regex.IsMatch(psw);
         }
 
     }
