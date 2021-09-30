@@ -16,7 +16,13 @@ namespace UserRegistration
             // Regex pattern
             string pattern = "^[A-Z]{1}[a-z]{3,}$";
             Regex regex = new Regex(pattern);
-            if (regex.IsMatch(name))
+
+            //Throw an error
+            if (name == null)
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionsType.Invalid_MESSAGE, "Invalid FirstName");
+            }
+            else if (regex.IsMatch(name))
             {
                 Console.WriteLine("Name {0} is Valid ", name);
             }
@@ -36,6 +42,12 @@ namespace UserRegistration
             // Regex pattern
             string pattern = "^[A-Z]{1}[a-z]{3,}$";
             Regex regex = new Regex(pattern);
+            //Throw an error
+            if (name == null)
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionsType.Invalid_MESSAGE, "Invalid LastName");
+            }
+
             if (regex.IsMatch(name))
             {
                 Console.WriteLine("Name {0} is Valid ", name);
@@ -56,6 +68,11 @@ namespace UserRegistration
             //regex pattern is created to check validity
             string pattern = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
             Regex regex = new Regex(pattern);
+            //Throw an error
+            if (mail == null)
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionsType.Invalid_MESSAGE, "Invalid Email Id");
+            }
             // IsMatch method check the pattern and mail
             if (regex.IsMatch(mail))
             {
@@ -76,6 +93,12 @@ namespace UserRegistration
         {
             string pattern = @"^[1-9]{2}"+" "+"[1-9]{1}[0-9]{9}$";
             Regex regex = new Regex(pattern);
+
+            //Throw an error
+            if (num == null)
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionsType.Invalid_MESSAGE, "Invalid Phone Number");
+            }
             if (regex.IsMatch(num))
             {
                 Console.WriteLine("Mobile Number {0} is valid", num);
@@ -95,6 +118,11 @@ namespace UserRegistration
         {
             string pattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d@$!%*?&]{8,}$";
             Regex regex = new Regex(pattern);
+            //Throw an error
+            if (psw == null)
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionsType.Invalid_MESSAGE, "Invalid Password");
+            }
             if (regex.IsMatch(psw))
             {
                 Console.WriteLine("Password {0} is valid", psw);
