@@ -8,7 +8,7 @@ namespace UserRegistration
     {
         public enum ExceptionsType
         {
-            Invalid_MESSAGE,
+            Invalid_MESSAGE
         }
         public ExceptionsType type;
         public UserRegistrationException(ExceptionsType Type, string message) : base(message)
